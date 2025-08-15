@@ -1,26 +1,43 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-accent: #4f46e5;
+  --button-bg: #4f46e5;
+  --button-hover: #4338ca;
+  --footer-bg: #111827;
+  --footer-text: #9ca3af;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-accent: #818cf8;
+  --button-bg: #6366f1;
+  --button-hover: #4f46e5;
+  --footer-bg: #020617;
+  --footer-text: #64748b;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transiciones suaves para cambios de tema */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
